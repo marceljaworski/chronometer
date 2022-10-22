@@ -46,3 +46,14 @@ button:focus {
     color: rgb(255, 96, 96);
     background-color: #0d0d0d;
 }
+.item{
+    
+    margin-top: 0.5rem;
+    border-bottom: rgb(56, 56, 56)solid 1px;
+    padding: 0.2rem;
+    font-size: 32px;
+}
+.container{
+    display: flex;
+    flex-direction: column;;
+}
