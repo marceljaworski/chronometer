@@ -47,9 +47,7 @@ button:focus {
     background-color: #0d0d0d;
 }
 .item{
-    
-    margin-top: 0.5rem;
-    border-bottom: rgb(56, 56, 56)solid 1px;
+    border-top: rgb(56, 56, 56)solid 1px;
     padding: 0.2rem;
     font-size: 32px;
 }
