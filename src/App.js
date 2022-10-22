@@ -35,7 +35,7 @@ function App() {
         <button onClick={()=> setTimeOn(true)}>Resume</button>
         )}
         {!timerOn && time > 0 && (
-        <button onClick={()=> setTime(0)}>Reset</button>
+        <button className="reset"onClick={()=> setTime(0)}>Reset</button>
         )}
       </div>
     </div>
