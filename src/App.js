@@ -6,12 +6,15 @@ function App() {
   const[time, setTime] = React.useState(0)
   const[timerOn, setTimeOn] = React.useState(false)
   const[laps, setLaps] = React.useState(false)
-  const[arr,setLap] = React.useState([]);
-  console.log(arr)
+  const[arr,setLap] = React.useState([])
+  const max = Math.max(...arr)
+  const min = Math.min(...arr)
+
+  console.log(max)
+  console.log(min)
   
   const addLap = (time) => {
-    
-    setLap(current => current.concat(time))
+    setLap(current => [time, ...current])
   }
   const resetLaps = () => {
     setLap([])
@@ -29,7 +32,7 @@ function App() {
   },[timerOn])
   
   const displayLaps = arr.map((item, index)=>{
-      return <Showlaps key={index} item={item} />
+      return <Showlaps key={index} item={item } />
   })
 
   return (
