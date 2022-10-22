@@ -1,0 +1,37 @@
+html,
+body,
+#root,
+.room {
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  background-color: rgb(60, 60, 60);
+  color :#fff;
+  
+  padding: 50px;
+}
+
+button {
+  height: 80px;
+  width: 80px;
+  font-size: 16px;
+  background-color: rgb(0, 0, 0);
+  
+  color: #fff;
+  border-radius: 50%;
+  border:rgb(0, 151, 45) solid 1px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+button:hover {
+  background-color: rgb(15, 95, 38);
+}
+button:active {
+  background-color: rgb(8, 46, 20);
+}
+button:focus {
+  outline: 0;
+}
