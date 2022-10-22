@@ -1,9 +1,10 @@
 import React from "react"
 import './App.css'
 import Showlaps from './components/Showlaps'
-
+export 
 function App() {
   const[time, setTime] = React.useState(0)
+  const[timelap, setTimelap] = React.useState(0)
   const[timerOn, setTimeOn] = React.useState(false)
   const[laps, setLaps] = React.useState(false)
   const[arr,setLap] = React.useState([])
@@ -24,6 +25,7 @@ function App() {
     if(timerOn){
       interval = setInterval(()=> {
         setTime(prevTime => prevTime + 10) 
+        setTimelap(prevTime => prevTime + 10)
       }, 10)
     }else{
       clearInterval(interval)
@@ -44,7 +46,7 @@ function App() {
       </div>
       <div>
         {!timerOn && time === 0 && (
-          <button onClick={()=> setTimeOn(true)}>Start</button>
+          <button className="start" onClick={()=> setTimeOn(true)}>Start</button>
           )}
         {timerOn && (
           <button onClick={()=> setTimeOn(false)}>Stop</button>
@@ -53,14 +55,20 @@ function App() {
           <button onClick={()=> setTimeOn(true)}>Resume</button>
           )}
         {!timerOn && time > 0 && (
-          <button className="reset"onClick={()=> setTime(0) + resetLaps()}>Reset</button>
+          <button className="reset"onClick={()=> resetLaps() + setTime(0) + setTimelap(0)  }>Reset</button>
           )}
         {timerOn && time > 0 && (
-          <button className="reset"onClick={()=> addLap(time) + setLaps(true)}>Lap</button>
+          <button className="reset"onClick={()=> addLap(timelap) + setLaps(true) + setTimelap(0)}>Lap</button>
           )}
+      </div>
+      <div className="timelap">
+        <span>{("0" + Math.floor((timelap / 60000) % 60)).slice(-2)}:</span>
+        <span>{("0" + Math.floor((timelap / 1000) % 60)).slice(-2)},</span>
+        <span className="ms">{("0" +((timelap / 10) % 100)).slice(-2)}</span>
       </div>
       <div className="container">
         {laps? displayLaps : null }
+        
       </div>
     </div>
   );
