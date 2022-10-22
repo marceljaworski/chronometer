@@ -1,10 +1,14 @@
 import React from "react"
 import './App.css'
+import Display from './components/Display'
 
 function App() {
   const[time, setTime] = React.useState(0)
   const[timerOn, setTimeOn] = React.useState(false)
-
+  const[lapsView, setLaps] = React.useState(false)
+  // const[array,setArray] = React.useState([]);
+  const array = [];
+  
   React.useEffect(()=>{
     let interval = null;
     if(timerOn){
@@ -16,6 +20,10 @@ function App() {
     }
     return() => clearInterval(interval)
   },[timerOn])
+  
+  const displayLaps = array.map((item, index)=>{
+      return <Display key={index} item={item} />
+  })
 
   return (
     <div className="App">
@@ -26,20 +34,28 @@ function App() {
       </div>
       <div>
         {!timerOn && time === 0 && (
-        <button onClick={()=> setTimeOn(true)}>Start</button>
-        )}
+          <button onClick={()=> setTimeOn(true)}>Start</button>
+          )}
         {timerOn && (
-        <button onClick={()=> setTimeOn(false)}>Stop</button>
-        )}
+          <button onClick={()=> setTimeOn(false)}>Stop</button>
+          )}
         {!timerOn && time !== 0 && (
-        <button onClick={()=> setTimeOn(true)}>Resume</button>
-        )}
+          <button onClick={()=> setTimeOn(true)}>Resume</button>
+          )}
         {!timerOn && time > 0 && (
-        <button className="reset"onClick={()=> setTime(0)}>Reset</button>
-        )}
+          <button className="reset"onClick={()=> setTime(0)}>Reset</button>
+          )}
+        {timerOn && time > 0 && (
+          <button className="reset"onClick={()=> array.concat([time]) &&
+             setLaps(true) && console.log (time)}>Lap</button>
+          )}
+      </div>
+      <div className="lapscontainer">
+        {lapsView? displayLaps : null }
       </div>
     </div>
   );
 }
+
 
 export default App;

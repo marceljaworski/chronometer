@@ -7,7 +7,7 @@ body,
   text-align: center;
   font-family: Geneva, Verdana, sans-serif;
   font-size: 1.5rem;
-  background-color: rgb(25, 25, 25);
+  background-color: #0d0d0d;
   color :#fff;
   
   padding: 50px;
@@ -17,20 +17,18 @@ button {
   height: 80px;
   width: 80px;
   font-size: 16px;
-  background-color: rgb(64, 63, 63);
-  
+  background-color:#3d3d3d;
   color: rgb(227, 227, 227);
   border-radius: 50%;
-  border:rgb(0, 151, 45) solid 1px;
-  padding: 6px 12px;
+  border: #50D167 solid 1px;
   cursor: pointer;
   margin: 0.5rem;
 }
 button:hover {
-  background-color: rgb(15, 95, 38);
+  transform: scale(1.1);
 }
 button:active {
-  background-color: rgb(8, 46, 20);
+  opacity: 50%;
 }
 button:focus {
   outline: 0;
@@ -46,5 +44,5 @@ button:focus {
 }
 .reset {
     color: rgb(255, 96, 96);
-    background-color: rgb(39, 39, 39);
+    background-color: #0d0d0d;
 }
