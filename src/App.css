@@ -55,7 +55,10 @@ button:focus {
     padding: 0.2rem;
     font-size: 32px;
 }
+.hidden{
+    display:none;
+}
 .container{
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
 }

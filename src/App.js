@@ -8,7 +8,7 @@ function App() {
   const[timerOn, setTimeOn] = React.useState(false)
   const[laps, setLaps] = React.useState(false)
   const[arr,setLap] = React.useState([])
-  const max = Math.max(...arr)
+  const max = Math.max(...arr).className
   const min = Math.min(...arr)
 
   console.log(max)
@@ -38,7 +38,7 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <div>
       <div className="display">
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
         <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)},</span>
@@ -61,12 +61,8 @@ function App() {
           <button className="reset"onClick={()=> addLap(timelap) + setLaps(true) + setTimelap(0)}>Lap</button>
           )}
       </div>
-      <div className="timelap">
-        <span>{("0" + Math.floor((timelap / 60000) % 60)).slice(-2)}:</span>
-        <span>{("0" + Math.floor((timelap / 1000) % 60)).slice(-2)},</span>
-        <span className="ms">{("0" +((timelap / 10) % 100)).slice(-2)}</span>
-      </div>
       <div className="container">
+        {time > 0 && (<Showlaps item={timelap} />)}
         {laps? displayLaps : null }
         
       </div>
