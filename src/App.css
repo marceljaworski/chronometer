@@ -16,10 +16,11 @@ body,
 .main-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: 1rem repeat(4, 100px) auto;
   grid-template-areas:
   ". . . ."
-  "display display display display"
+  ". . . ."
+  " display display display display"
   ". . . ." 
   "buttons-container buttons-container buttons-container buttons-container"
   "laps-container laps-container laps-container laps-container"
@@ -27,6 +28,8 @@ body,
 }
 .buttons-container{
   grid-area: buttons-container;
+  place-self: center;
+
 }
 button {
   height: 80px;
@@ -35,10 +38,9 @@ button {
   background-color:#3d3d3d;
   color: rgb(227, 227, 227);
   border-radius: 50%;
-  border: #50d168a9 solid 1px;
+  border: rgb(0, 151, 45) solid 1px;
   cursor: pointer;
-  margin: 0.5rem;
-  
+  margin-inline: 2rem;
 }
 button:hover {
   transform: scale(1.1);
@@ -52,8 +54,9 @@ button:focus {
 .display{
   color: #fff;
   border: rgb(0, 151, 45) 1px solid;
-  display: inline-block;
-  padding: 1rem;
+  font-size: 3rem;
+  padding: .2rem .5rem;
+  margin: auto;
   grid-area: display;
 }
 .ms {

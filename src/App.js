@@ -53,7 +53,7 @@ function App() {
           <button onClick={()=> setTimeOn(false)}>Stop</button>
           )}
         {!timerOn && time !== 0 && (
-          <button onClick={()=> setTimeOn(true)}>Resume</button>
+          <button onClick={()=> setTimeOn(true)}>Start</button>
           )}
         {!timerOn && time > 0 && (
           <button className="reset"onClick={()=> resetLaps() + setTime(0) + setTimelap(0)  }>Reset</button>
