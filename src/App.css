@@ -2,7 +2,6 @@ html,
 body,
 #root,
 .room {
-  height: 100vh;
   margin: 0;
   text-align: center;
   font-family: Geneva, Verdana, sans-serif;
@@ -33,34 +32,34 @@ button:focus {
   outline: 0;
 }
 .display{
-    color: #fff;
-    border: rgb(0, 151, 45) 1px solid;
-    display: inline-block;
-    padding: 1rem;
+  color: #fff;
+  border: rgb(0, 151, 45) 1px solid;
+  display: inline-block;
+  padding: 1rem;
 }
 .ms {
-    color: orange;
+  color: orange;
 }
 .start {
-    color : rgb(0, 183, 55);
-    background-color: rgba(0, 151, 45, 0.104);
+  color : rgb(0, 183, 55);
+  background-color: rgba(0, 151, 45, 0.104);
 }
 .reset {
-    color: rgb(255, 96, 96);
-    background-color: #0d0d0d;
+  color: rgb(255, 96, 96);
+  background-color: #0d0d0d;
 }
-.item{
-    border-top: rgb(56, 56, 56)solid 1px;
-    padding: 0.2rem;
-    font-size: 32px;
+.lap-item{
+  border-top: rgb(56, 56, 56)solid 1px;
+  padding: 0.2rem;
+  font-size: 32px;
 }
 .hidden{
-    display:none;
+  display:none;
 }
-.container{
-    display: flex;
-    flex-direction: column;
+.laps-container{
+  display: flex;
+  flex-direction: column;
 }
 ul{
-    list-style: none;
+  list-style: none;
 }
