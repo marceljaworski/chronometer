@@ -1,8 +1,8 @@
 import React from "react";
-function Showlaps ({item, index}){
+function Showlaps ({item}){
 
     return (
-        <div key = {index} className="item">
+        <div className="item">
         <span>{("0" + Math.floor((item / 60000) % 60)).slice(-2)}:</span>
         <span>{("0" + Math.floor((item / 1000) % 60)).slice(-2)},</span>
         <span className="ms">{("0" +((item / 10) % 100)).slice(-2)}</span>

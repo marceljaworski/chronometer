@@ -9,7 +9,6 @@ body,
   font-size: 1.5rem;
   background-color: #0d0d0d;
   color :#fff;
-  
   padding: 50px;
 }
 
@@ -61,4 +60,7 @@ button:focus {
 .container{
     display: flex;
     flex-direction: column;
+}
+ul{
+    list-style: none;
 }

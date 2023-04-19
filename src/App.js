@@ -7,14 +7,16 @@ function App() {
   const[timelap, setTimelap] = React.useState(0)
   const[timerOn, setTimeOn] = React.useState(false)
   const[laps, setLaps] = React.useState(false)
-  const[arr,setLap] = React.useState([])
-  const max = Math.max(...arr).className
+  const[arr, setLap] = React.useState([])
+  // const[theme, setTheme] = useState([])
+  const max = Math.max(...arr)
   const min = Math.min(...arr)
 
-  console.log(max)
-  console.log(min)
-  
   const addLap = (time) => {
+    // if(time == max){
+    //   setTheme(current => [time, ...current])
+
+    // }
     setLap(current => [time, ...current])
   }
   const resetLaps = () => {
@@ -25,7 +27,7 @@ function App() {
     if(timerOn){
       interval = setInterval(()=> {
         setTime(prevTime => prevTime + 10) 
-        setTimelap(prevTime => prevTime + 10)
+        setTimelap(prevTime => prevTime + 10) 
       }, 10)
     }else{
       clearInterval(interval)
@@ -64,8 +66,8 @@ function App() {
       <div className="container">
         {time > 0 && (<Showlaps item={timelap} />)}
         {laps? displayLaps : null }
-        
       </div>
+      
     </div>
   );
 }
