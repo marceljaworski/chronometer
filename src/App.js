@@ -48,19 +48,19 @@ function App() {
       <section className="buttons-container">
         {!timerOn && time === 0 && (
           <button className="start" onClick={()=> setTimeOn(true)}>Start</button>
-          )}
-        {timerOn && (
-          <button onClick={()=> setTimeOn(false)}>Stop</button>
-          )}
-        {!timerOn && time !== 0 && (
-          <button onClick={()=> setTimeOn(true)}>Start</button>
-          )}
+        )}
         {!timerOn && time > 0 && (
-          <button className="reset"onClick={()=> resetLaps() + setTime(0) + setTimelap(0)  }>Reset</button>
-          )}
+          <button className="reset"onClick={()=> resetLaps() + setTime(0) + setTimelap(0)}>Reset</button>
+        )}
         {timerOn && time > 0 && (
           <button className="reset"onClick={()=> addLap(timelap) + setLaps(true) + setTimelap(0)}>Lap</button>
-          )}
+        )}
+        {timerOn && (
+          <button onClick={()=> setTimeOn(false)}>Stop</button>
+        )}
+        {!timerOn && time !== 0 && (
+          <button onClick={()=> setTimeOn(true)}>Start</button>
+        )}
       </section>
       <section className="laps-container">
         {time > 0 && (<Showlaps item={timelap} />)}
