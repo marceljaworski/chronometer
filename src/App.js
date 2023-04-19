@@ -39,13 +39,13 @@ function App() {
   })
 
   return (
-    <div>
-      <div className="display">
+    <div className="main-container">
+      <section className="display">
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
         <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)},</span>
         <span className="ms">{("0" +((time / 10) % 100)).slice(-2)}</span>
-      </div>
-      <div className="buttons-container">
+      </section>
+      <section className="buttons-container">
         {!timerOn && time === 0 && (
           <button className="start" onClick={()=> setTimeOn(true)}>Start</button>
           )}
@@ -61,11 +61,11 @@ function App() {
         {timerOn && time > 0 && (
           <button className="reset"onClick={()=> addLap(timelap) + setLaps(true) + setTimelap(0)}>Lap</button>
           )}
-      </div>
-      <div className="laps-container">
+      </section>
+      <section className="laps-container">
         {time > 0 && (<Showlaps item={timelap} />)}
         {laps? displayLaps : null }
-      </div>
+      </section>
       
     </div>
   );
