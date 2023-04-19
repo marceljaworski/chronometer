@@ -53,14 +53,23 @@ button:focus {
 }
 .display{
   color: #fff;
-  border: rgb(0, 151, 45) 1px solid;
   font-size: 3rem;
-  padding: .2rem .5rem;
+  /* border: rgb(0, 151, 45) 1px solid; */
+  /* padding: .2rem .5rem; */
   margin: auto;
   grid-area: display;
+  display: flex;
+}
+
+.display span {
+  width: 101px;
+  display: block;
 }
 .ms {
   color: orange;
+}
+#display-ms{
+  width: 91px;
 }
 .start {
   color : rgb(0, 183, 55);
@@ -74,7 +83,9 @@ button:focus {
   border-top: rgb(56, 56, 56)solid 1px;
   padding: 0.2rem;
   font-size: 32px;
+  display: flex;
 }
+
 .hidden{
   display:none;
 }
