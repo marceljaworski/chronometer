@@ -1,16 +1,15 @@
-import React from "react"
-import './App.css'
-import Showlaps from './components/Showlaps'
-export 
+import React, { useState, useEffect } from "react";
+import './App.css';
+import Showlaps from './components/Showlaps';
 function App() {
-  const[time, setTime] = React.useState(0)
-  const[timelap, setTimelap] = React.useState(0)
-  const[timerOn, setTimeOn] = React.useState(false)
-  const[laps, setLaps] = React.useState(false)
-  const[arr, setLap] = React.useState([])
+  const[time, setTime] = useState(0)
+  const[timelap, setTimelap] = useState(0)
+  const[timerOn, setTimeOn] = useState(false)
+  const[laps, setLaps] = useState(false)
+  const[arr, setLap] = useState([])
   // const[theme, setTheme] = useState([])
-  const max = Math.max(...arr)
-  const min = Math.min(...arr)
+  // const max = Math.max(...arr)
+  // const min = Math.min(...arr)
 
   const addLap = (time) => {
     // if(time == max){
@@ -22,7 +21,7 @@ function App() {
   const resetLaps = () => {
     setLap([])
   }
-  React.useEffect(()=>{
+  useEffect(()=>{
     let interval = null;
     if(timerOn){
       interval = setInterval(()=> {
