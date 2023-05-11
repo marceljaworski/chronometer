@@ -8,9 +8,10 @@ function App() {
   const[laps, setLaps] = useState(false)
   const[arr, setLap] = useState([])
   // const[theme, setTheme] = useState([])
-  // const max = Math.max(...arr)
-  // const min = Math.min(...arr)
-
+  const max = Math.max(...arr)
+  const min = Math.min(...arr)
+  // console.log("max", max)
+  console.log(arr)
   const addLap = (time) => {
     // if(time == max){
     //   setTheme(current => [time, ...current])
@@ -35,7 +36,7 @@ function App() {
   },[timerOn])
   
   const displayLaps = arr.map((item, index)=>{
-      return <Showlaps key={index} item={item } />
+      return <Showlaps key={index} item={item} max={max} min={min} />
   })
 
   return (
