@@ -7,20 +7,26 @@ function App() {
   const[timerOn, setTimeOn] = useState(false)
   const[laps, setLaps] = useState(false)
   const[arr, setLap] = useState([])
+  const[lapCount, setLapCount] = useState(1)
+  const[max, setMax] =useState(null)
+  const[min, setMin] =useState(null)
   // const[theme, setTheme] = useState([])
-  const max = Math.max(...arr)
-  const min = Math.min(...arr)
-  // console.log("max", max)
-  console.log(arr)
+  
+  
+  
   const addLap = (time) => {
-    // if(time == max){
-    //   setTheme(current => [time, ...current])
-
-    // }
-    setLap(current => [time, ...current])
+    setLapCount(lapCount + 1)
+    setLap(current => [{time:time, lap: lapCount}, ...current])
+    if( arr.length >= 2){
+      const max = Math.max(...arr.map((el) => el.time))
+      const min = Math.min(...arr.map((el) => el.time))
+      setMax(max) 
+      setMin(min) 
+    }
   }
   const resetLaps = () => {
     setLap([])
+    setLapCount(1)
   }
   useEffect(()=>{
     let interval = null;
@@ -36,7 +42,8 @@ function App() {
   },[timerOn])
   
   const displayLaps = arr.map((item, index)=>{
-      return <Showlaps key={index} item={item} max={max} min={min} />
+    let lap = index + 1;
+      return <Showlaps key={index} item={item} max={max} min={min} lap={lap} />
   })
 
   return (
@@ -64,7 +71,7 @@ function App() {
         )}
       </section>
       <section className="laps-container">
-        {time > 0 && (<Showlaps item={timelap} />)}
+        {/* {time > 0 && (<Showlaps item={timelap} />)} */}
         {laps? displayLaps : null }
       </section>
       

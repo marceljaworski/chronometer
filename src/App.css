@@ -85,9 +85,12 @@ button:focus {
   grid-area: laps-container;
 }
 .lap-item{
+  display: flex;
+  justify-content: space-between;
   border-top: rgb(56, 56, 56)solid 1px;
-  padding: .1rem 3rem;
-  font-size: 32px;
+  padding: .1rem 0;
+  font-size: 1rem;
+  width: 300px;
   margin: auto;
 }
 .hidden{
@@ -98,4 +101,7 @@ button:focus {
 }
 .green {
   color:  rgb(0, 183, 55);
+}
+.lap {
+  display: inline;
 }
